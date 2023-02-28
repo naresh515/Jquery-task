@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: aqua !important;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 0;
+        text-align: center;
+        padding: 100px 0px;
+        align-items: center;
+
+    }
+
+    #firstName,
+    #email,
+    #mobile,
+    #passwordField {
+        width: 400px;
+        padding: 15px;
+        font-size: 20px;
+        margin: 10px 0px;
+        border: none;
+        border-radius: 12px;
+    }
+
+    #submit {
+        padding: 15px;
+        width: 150px;
+        font-size: 20px;
+        margin: 10px 0px;
+        border-radius: 12%;
+        border: none;
+        background-color: rgb(202, 235, 55);
+    }
+
+    #show_error,
+    #show_error1,
+    #show_error2,
+    #show_error3 {
+        width: 100%;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form id="first_form">
+            <div>
+                <input id="firstName" type="text" name="firstname" placeholder="UserName...">
+                <div id="show_error"></div>
+            </div>
+            <div>
+                <input id="passwordField" type="password" name="password" placeholder="Password">
+                <div id="show_error1"></div>
+            </div>
+            <div>
+                <input id="email" type="email" name="email" placeholder="Your E-mail Id">
+                <div id="show_error2"></div>
+            </div>
+            <div>
+                <input id="mobile" type="number" name="mobile" placeholder="Mobile No.">
+                <div id="show_error3"></div>
+            </div>
+            <div>
+                <button id="submit" type="submit">SignUp</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function (e) {
+
+                e.preventDefault()
+
+                var user = $('#firstName').val();
+                if (user == "" || user.length < 3 || user.length > 25) {
+                    $("#show_error").html('** The username must be field between 3 and 25 latters');
+                } else {
+                    $("#show_error").empty()
+                }
+
+                var pwd = $('#passwordField').val();
+                if (pwd == "" || pwd.length < 8 || pwd.length > 20) {
+                    $("#show_error1").html('** The password must be field and length will be 8 latters');
+                } else {
+                    $("#show_error1").empty()
+                }
+                var mob = $('#mobile').val();
+                if (mob == "" || mob.length < 10 || mob.length > 10) {
+                    $("#show_error3").html('** The Mobile No. length will be 10 Number');
+                } else {
+                    $("#show_error3").empty()
+                }
+
+                var userinput = $('#email').val();
+                var pattern = /^\b[a-zA-Z0-9.]+@[a-zA-Z0-9.]+.[a-z][A-Z]{2,4}\b$/i
+                if (!pattern.test(userinput)) {
+                    $("#show_error2").html('** Please Enter Valid Email Address');
+                } else {
+                    $("#show_error2").empty()
+                }
+
+                console.log(this);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

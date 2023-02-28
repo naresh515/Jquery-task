@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Top</title>
+    <style>
+        body {
+            font: 16px/64px Arial, sans-serif;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 99;
+            background: red;
+            color: #fff;
+            border-radius: 30px;
+            padding: 15px;
+            font-weight: bold;
+            line-height: normal;
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <h3>On Scroll Sticky Header</h3>
+        <p>The header will stick to the top when you reach its scroll position.</p>
+        <p>Scroll back up to remove the sticky effect.</p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <p> Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur
+            eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae
+            voluptatibus.
+        </p>
+        <div class="top">
+            <button type="button" class="scroll-top" onclick="goToTop();">Go to Top</button>
+        </div>
+        <script>
+            $(document).ready(function () {
+
+                var scrollTop = $(".scroll-top");
+
+                $(window).scroll(function () {
+
+                    var topPos = $(this).scrollTop();
+                    if (topPos > 100) {
+                        $(scrollTop).css("opacity", "1");
+
+                    } else {
+                        $(scrollTop).css("opacity", "0");
+                    }
+
+                });
+                $(scrollTop).click(function () {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+
+                });
+            });
+
+        </script>
+</body>
+
+</html>
